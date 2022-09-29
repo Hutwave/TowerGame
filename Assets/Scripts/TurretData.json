@@ -1,0 +1,14 @@
+{
+	"Turret": {
+		"Damage": 5,
+		"Range": 350,
+		"FireRate": 0.5,
+		"AOE": 0
+	},
+	"Bomb": {
+		"Damage": 10,
+		"Range": 500,
+		"FireRate": 2,
+		"AOE": 150
+	}
+}
