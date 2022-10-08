@@ -18,9 +18,12 @@ public class CameraMovement : MonoBehaviour
     private Vector3 dragStart;
     private Vector3 dragCurrent;
 
+    private BuildManager buildManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        buildManager = BuildManager.instance;
         newPos = transform.position;
         newRotation = transform.rotation;
         newZoom = cameraTransform.localPosition;
@@ -38,11 +41,16 @@ public class CameraMovement : MonoBehaviour
     {
         if(Input.mouseScrollDelta.y != 0)
         {
-            newZoom += Input.mouseScrollDelta.y * new Vector3(0, zoomAmount.y * 20, zoomAmount.z * 20);
+            if((newZoom.y < -40 && Input.mouseScrollDelta.y < 0) || (newZoom.y > -68 && Input.mouseScrollDelta.y > 0))
+            {
+                newZoom += Input.mouseScrollDelta.y * new Vector3(0, zoomAmount.y * 20, zoomAmount.z * 20);
+            }
+            
         }
 
         if (Input.GetMouseButtonDown(1))
         {
+            buildManager.UnselectTower();
             Plane plane = new Plane(Vector3.up, Vector3.zero);
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -99,11 +107,11 @@ public class CameraMovement : MonoBehaviour
             newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
         }
 
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && cameraTransform.position.y > 25)
         {
             newZoom += (zoomAmount);
         }
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.F) && cameraTransform.position.y < 50)
         {
             newZoom -= zoomAmount;
         }

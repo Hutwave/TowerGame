@@ -346,6 +346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 292328148314884287}
+  - component: {fileID: 4127383662795293223}
   m_Layer: 0
   m_Name: EmptyTower
   m_TagString: Tower
@@ -378,6 +379,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4127383662795293223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532207924698614538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b1ce805201d764d800f558056d57d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cost: 75
+  buildDelay: 0.175
 --- !u!1 &1582440019976838904
 GameObject:
   m_ObjectHideFlags: 0

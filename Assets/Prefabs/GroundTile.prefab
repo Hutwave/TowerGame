@@ -39,9 +39,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8993966094366911350}
     m_Modifications:
+    - target: {fileID: 984707646778212447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: hoverColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984707646778212447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: hoverColor.b
+      value: 0.8509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 984707646778212447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: hoverColor.g
+      value: 0.83137256
+      objectReference: {fileID: 0}
+    - target: {fileID: 984707646778212447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: hoverColor.r
+      value: 0.16153437
+      objectReference: {fileID: 0}
     - target: {fileID: 4263554401273662441, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263554401273662441, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263554401273662441, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4263554401273662441, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -86,6 +110,18 @@ PrefabInstance:
     - target: {fileID: 4263554401273662445, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: m_Name
       value: (0, 0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568374672078260719, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568374672078260719, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8492854956379913072, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}

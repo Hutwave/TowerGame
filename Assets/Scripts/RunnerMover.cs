@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour
+public class RunnerMover : MonoBehaviour
 {
     public float speed = 1f;
     public List<Node> path = new List<Node>();
 
-    Enemy enemy;
+    Runner runner;
     GridManager gridManager;
     Pathfinder pathfinder;
 
@@ -19,14 +19,14 @@ public class EnemyMover : MonoBehaviour
 
     void Awake()
     {
-        enemy = FindObjectOfType<Enemy>();
+        runner = FindObjectOfType<Runner>();
         gridManager = FindObjectOfType<GridManager>();
         pathfinder = FindObjectOfType<Pathfinder>();
     }
 
     void RecalculatePath(bool resetPath)
     {
-        Vector2Int coordinates = new Vector2Int();
+        Vector2Int coordinates;
 
         if (resetPath)
         {
@@ -50,7 +50,7 @@ public class EnemyMover : MonoBehaviour
 
     void FinishPath()
     {
-        enemy.PenaltyMoney();
+        runner.PenaltyMoney();
         gameObject.SetActive(false);
     }
 

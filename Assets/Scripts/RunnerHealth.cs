@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class RunnerHealth : MonoBehaviour
 {
 
     public int maxHitPoints;
     public int currentHitPoints;
 
-    Enemy enemy;
+    Runner runner;
 
     /*
     void OnEnable()
@@ -19,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        enemy = GetComponent<Enemy>();
+        runner = GetComponent<Runner>();
         currentHitPoints = maxHitPoints;
     }
 
@@ -30,7 +30,7 @@ public class EnemyHealth : MonoBehaviour
         if (gameObject.activeInHierarchy && currentHitPoints <= 0)
         {
             gameObject.SetActive(false);
-            enemy.RewardMoney();
+            runner.RewardMoney();
         }
     }
 

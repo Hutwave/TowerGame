@@ -5,7 +5,8 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
 
-    public GameObject enemyPrefab;
+    public GameObject runnerPrefab;
+    public GameObject runner2Prefab;
     public int poolSize = 5;
     public float spawnTimer = 1f;
 
@@ -18,7 +19,7 @@ public class ObjectPool : MonoBehaviour
     void Start()
     {
         StartCoroutine("PopulatePool");
-        StartCoroutine("SpawnEnemy", 5);
+        StartCoroutine("SpawnRunner", 5);
     }
 
     void PopulatePool()
@@ -26,8 +27,10 @@ public class ObjectPool : MonoBehaviour
         pool = new GameObject[poolSize];
         for(int i = 0; i < pool.Length; i++)
         {
-            pool[i] = Instantiate(enemyPrefab, transform);
+            pool[i] = Instantiate(runnerPrefab, transform);
+            pool[i].SetActive(false);
         }
+        pool[4] = Instantiate(runner2Prefab, transform);
     }
 
     void EnableObjectInPool()
@@ -36,13 +39,15 @@ public class ObjectPool : MonoBehaviour
         {
             if(pool[i].activeInHierarchy == false)
             {
+                var asd = pool[i].GetComponent<RunnerHealth>();
+                asd.currentHitPoints = asd.maxHitPoints;
                 pool[i].SetActive(true);
                 return;
             }
         }
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnRunner()
     {
         while (true)
         {

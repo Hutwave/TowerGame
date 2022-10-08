@@ -131,10 +131,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4263554401273662445}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d886f0eac0edc849a372b506002ed4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaceable: 1
+  hoverColor: {r: 0.7169812, g: 0.6507646, b: 0.13866144, a: 0}
   towerPrefab: {fileID: 7632267168697035454, guid: 2a4b5634fb6954c4db849ad11ca8169a, type: 3}

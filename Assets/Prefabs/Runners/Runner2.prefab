@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7943155073007548013}
   - component: {fileID: -6238015070653582684}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Runner2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27a63c2890cca345b0e3a45d202395e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 5
+  maxHitPoints: 12
   currentHitPoints: 0
 --- !u!65 &-7943155073007548013
 BoxCollider:
@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5883896520640608099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -161,7 +161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7bf71eab87ff92b49906bb159ade31bb, type: 2}
+  - {fileID: 2100000, guid: 30aac424db3cfa046875bf9e590e0fea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

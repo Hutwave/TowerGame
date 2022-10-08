@@ -6,5 +6,6 @@ public class UnitStats : MonoBehaviour
 {
 
     public int towerSize;
+    public int goldPrice;
 
 }

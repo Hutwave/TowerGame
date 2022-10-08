@@ -58,10 +58,10 @@ public class GridManager : MonoBehaviour
         return new Vector3
         {
             x = coordinates.x * 10,
+            y = 0.5f,
             z = coordinates.y * 10,
         };
     }
-
 
     void CreateGrid()
     {
@@ -73,5 +73,19 @@ public class GridManager : MonoBehaviour
                 grid.Add(coordinates, new Node(coordinates, true));
             }
         }
+    }
+
+    public Dictionary<Vector2Int, Node> EmptyGrid()
+    {
+        Dictionary<Vector2Int, Node> emptyGrid = new Dictionary<Vector2Int, Node>();
+        for (int x = 0; x < gridSize.x; x++)
+        {
+            for (int y = 0; y < gridSize.y; y++)
+            {
+                Vector2Int coordinates = new Vector2Int(x, y);
+                emptyGrid.Add(coordinates, new Node(coordinates, true));
+            }
+        }
+        return emptyGrid;
     }
 }

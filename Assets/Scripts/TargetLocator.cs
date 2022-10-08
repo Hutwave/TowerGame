@@ -9,16 +9,16 @@ public class TargetLocator : MonoBehaviour
     public bool particleShooting;
     public GameObject bulletProjectile;
     public float initialCooldown;
+    public float towerRange;
 
     bool turning = false;
-    float towerRange;
     private bool inRange = false;
     private float cooldown;
 
     private void Start()
     {
         cooldown = 0.2f;
-        InvokeRepeating("GetClosestEnemy", 0f, 1f);
+        InvokeRepeating("GetClosestRunner", 0f, 1f);
     }
     void Update()
     {
@@ -37,14 +37,13 @@ public class TargetLocator : MonoBehaviour
         }
     }
 
-    void GetClosestEnemy()
+    void GetClosestRunner()
     {
-        Enemy[] enemies = FindObjectsOfType<Enemy>();
-        towerRange = 200f;
+        Runner[] enemies = FindObjectsOfType<Runner>();
         Transform bestTarget = null;
         float closestDistanceSqr = Mathf.Infinity;
         Vector3 currentPosition = transform.position;
-        foreach (Enemy potentialTarget in enemies)
+        foreach (Runner potentialTarget in enemies)
         {
             Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
             float dSqrToTarget = directionToTarget.sqrMagnitude;

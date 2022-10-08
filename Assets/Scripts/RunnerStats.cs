@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New enemy", menuName = "Enemy Creation / Enemy unit")]
+[CreateAssetMenu(fileName = "New runner", menuName = "Runner Creation / Runner unit")]
 
-public class Enemystats : ScriptableObject
+public class RunnerStats : ScriptableObject
 {
 
-    public string enemyType;
+    public string runnerType;
     public float speed;
     public float defense;
     public float maxHealth;

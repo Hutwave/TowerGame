@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Runner : MonoBehaviour
 {
 
     public int moneyReward = 25;
@@ -28,7 +28,8 @@ public class Enemy : MonoBehaviour
     {
         if (levelResources != null)
         {
-            levelResources.LoseMoney(moneyPenalty);
+            //levelResources.LoseMoney(moneyPenalty);
+            levelResources.LoseLife(1);
         }
     }
 }

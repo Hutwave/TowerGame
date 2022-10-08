@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileBasic : MonoBehaviour
 {
-    public float speed = 70f;
+    public float speed = 10f;
 
     private Transform target;
     private int damage;
@@ -12,7 +12,7 @@ public class ProjectileBasic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(target == null)
+        if(target == null || !target.gameObject.activeInHierarchy)
         {
             Destroy(gameObject);
             return;
@@ -37,7 +37,7 @@ public class ProjectileBasic : MonoBehaviour
 
     private void HitTarget()
     {
-        EnemyHealth hp = target.GetComponent<EnemyHealth>();
+        RunnerHealth hp = target.GetComponent<RunnerHealth>();
         hp.TakeDamage(damage);
         Destroy(gameObject);
         return;
@@ -45,7 +45,7 @@ public class ProjectileBasic : MonoBehaviour
 
     public void Seek(Transform _target)
     {
-        target = _target;
+       target = _target;
     }
 
 }
