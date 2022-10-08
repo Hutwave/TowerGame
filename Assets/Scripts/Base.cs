@@ -26,7 +26,7 @@ public class Base : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("DIED LOL NOOB");
+        Debug.Log("Life < 0: " + currentLife);
     }
     // Update is called once per frame
     void Update()
