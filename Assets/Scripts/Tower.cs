@@ -7,10 +7,16 @@ public class Tower : MonoBehaviour
 {
     [SerializeField] int cost = 75;
     [SerializeField] float buildDelay = 0.2f;
+    [SerializeField] int towerSpace = 50;
 
     void Start()
     {
         StartCoroutine(Build());
+    }
+
+    public int getSpace()
+    {
+        return towerSpace;
     }
 
     public bool CreateTower(Tower tower, Vector3 position)

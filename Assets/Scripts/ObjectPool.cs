@@ -5,9 +5,8 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
 
-    public GameObject runnerPrefab;
-    public GameObject runner2Prefab;
-    public int poolSize = 5;
+    public GameObject[] runnerPrefabs;
+    public int poolSize;
     public float spawnTimer = 1f;
 
     GameObject[] pool;
@@ -27,10 +26,10 @@ public class ObjectPool : MonoBehaviour
         pool = new GameObject[poolSize];
         for(int i = 0; i < pool.Length; i++)
         {
-            pool[i] = Instantiate(runnerPrefab, transform);
+            pool[i] = Instantiate(runnerPrefabs[0], transform);
             pool[i].SetActive(false);
         }
-        pool[4] = Instantiate(runner2Prefab, transform);
+        if(pool.Length>0)pool[pool.Length-1] = Instantiate(runnerPrefabs[1], transform);
     }
 
     void EnableObjectInPool()

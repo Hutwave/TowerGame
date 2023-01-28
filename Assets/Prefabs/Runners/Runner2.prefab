@@ -76,8 +76,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27a63c2890cca345b0e3a45d202395e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 12
+  maxHitPoints: 1.2111111e+10
   currentHitPoints: 0
+  poisonResist: 0
+  burnResist: 0
+  slowResist: 0
+  stunResist: 0
+  regenResist: 0
+  hardenedResist: 0
+  weakenedResist: 0
 --- !u!65 &-7943155073007548013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -161,7 +168,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 30aac424db3cfa046875bf9e590e0fea, type: 2}
+  - {fileID: 2100000, guid: 87392b50ab4c2e14492182270cab728d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

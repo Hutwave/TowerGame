@@ -7,6 +7,7 @@ public class Tile : MonoBehaviour
 
     public bool isPlaceable;
     public bool IsPlaceable { get { return isPlaceable; } }
+    public bool isWalkable;
 
     GridManager gridManager;
     Pathfinder pathfinder;
@@ -36,6 +37,7 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         //rend = GetComponent<Renderer>();
         originalColor = editChild.GetComponent<Renderer>().material.GetColor("_Color");
         if (gridManager != null)

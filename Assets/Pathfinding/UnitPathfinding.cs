@@ -30,6 +30,8 @@ public class UnitPathfinding: MonoBehaviour
 
     public List<Node> GetUnitPath(Vector2Int coordinates)
     {
+        Debug.Log(coordinates);
+        Debug.Log(grid.ToString());
         startNode = grid[coordinates];
         destinationNode = grid[destinationCoordinates];
         unitSearch(coordinates);

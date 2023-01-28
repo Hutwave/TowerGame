@@ -6,7 +6,7 @@ public class Runner : MonoBehaviour
 {
 
     public int moneyReward = 25;
-    public int moneyPenalty = 50;
+    public int moneyPenalty = 50;   
 
     LevelResources levelResources;
 
@@ -32,4 +32,5 @@ public class Runner : MonoBehaviour
             levelResources.LoseLife(1);
         }
     }
+
 }

@@ -6,10 +6,13 @@ public class RunnerMover : MonoBehaviour
 {
     public float speed = 1f;
     public List<Node> path = new List<Node>();
+    float checkEverySec = 0f;
+    float actualSpeed;
 
     Runner runner;
     GridManager gridManager;
     Pathfinder pathfinder;
+    RunnerHealth runnerHealth;
 
     private void OnEnable()
     {
@@ -22,6 +25,8 @@ public class RunnerMover : MonoBehaviour
         runner = FindObjectOfType<Runner>();
         gridManager = FindObjectOfType<GridManager>();
         pathfinder = FindObjectOfType<Pathfinder>();
+        runnerHealth = FindObjectOfType<RunnerHealth>();
+        actualSpeed = speed;
     }
 
     void RecalculatePath(bool resetPath)
@@ -48,6 +53,17 @@ public class RunnerMover : MonoBehaviour
         transform.position = gridManager.GetPositionFromCoordinates(pathfinder.StartCoordinates);
     }
 
+    private void Update()
+    {
+        checkEverySec += Time.deltaTime;
+        if(checkEverySec > 1f)
+        {
+            checkEverySec -= 1f;
+            actualSpeed = speed * (1f-runnerHealth.applySlow());
+            Debug.Log(actualSpeed);
+        }
+    }
+
     void FinishPath()
     {
         runner.PenaltyMoney();
@@ -65,7 +81,7 @@ public class RunnerMover : MonoBehaviour
 
             while(travelPercent < 1f)
             {
-                travelPercent += Time.deltaTime * speed;
+                travelPercent += Time.deltaTime * actualSpeed;
                 transform.position = Vector3.Lerp(startPos, endPos, travelPercent);
                 yield return new WaitForEndOfFrame();
             }

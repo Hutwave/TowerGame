@@ -93,12 +93,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1238868257ebd844fb11592e824fc170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 3610503850083219667}
+  weapon: {fileID: 2265496203174861547}
   target: {fileID: 0}
+  bulletOutput: {fileID: 3610503850083219667}
   particleShooting: 0
   bulletProjectile: {fileID: 6612439055213456457, guid: f7182ae01c8474b4593ed9e56641c43a, type: 3}
   initialCooldown: 2
   towerRange: 800
+  unitDamage: 4
 --- !u!1 &722432162468243644
 GameObject:
   m_ObjectHideFlags: 0

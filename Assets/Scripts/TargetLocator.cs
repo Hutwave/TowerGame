@@ -6,10 +6,13 @@ public class TargetLocator : MonoBehaviour
 {
     public Transform weapon;
     public Transform target;
+    public Transform bulletOutput;
     public bool particleShooting;
     public GameObject bulletProjectile;
     public float initialCooldown;
     public float towerRange;
+
+    public float unitDamage;
 
     bool turning = false;
     private bool inRange = false;
@@ -64,9 +67,15 @@ public class TargetLocator : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bulletGO = (GameObject)Instantiate(bulletProjectile, weapon.position, weapon.rotation);
+        UnitStats stats = GetComponent<UnitStats>();
+        GameObject bulletGO = (GameObject)Instantiate(bulletProjectile, bulletOutput.position, weapon.rotation);
         ProjectileBasic bullet = bulletGO.GetComponent<ProjectileBasic>();
-        bullet.setDamage(2);
+        var statusList = stats.GetStatuses();
+        bullet.setDamage(stats.GetDamage());
+        foreach(var key in statusList.Keys)
+        {
+            bullet.addStatus(key, statusList[key]);
+        }
         bullet.Seek(target);
         cooldown = initialCooldown;
     }

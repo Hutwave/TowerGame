@@ -31,6 +31,8 @@ public class UnitMover : MonoBehaviour
         Debug.Log(tower.position.x + " " + tower.position.z + " - " + pathfinder.startCoordinates.x + " " + pathfinder.startCoordinates.y + "-" + pathfinder.destinationCoordinates.x + " " + pathfinder.destinationCoordinates.y);
         StopAllCoroutines();
         path.Clear();
+        Debug.Log(unit.position);
+        Debug.Log(gridManager.name);
         path = pathfinder.GetUnitPath(gridManager.GetCoordinatesFromPosition(unit.position));
         StartCoroutine(FollowPath());
     }

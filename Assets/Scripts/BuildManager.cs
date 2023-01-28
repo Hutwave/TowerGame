@@ -44,9 +44,11 @@ public class BuildManager : MonoBehaviour
 
     public void SetTurretToBuild(string towerName)
     {
+        Debug.LogError(towerName);
+       
         var foundTurret = turrets.Find(x => x.name.ToLower() == towerName.ToLower());
-
-        if(foundTurret != null)
+        Debug.LogError(foundTurret);
+        if (foundTurret != null)
         {
             turretToBuild = foundTurret;
         }

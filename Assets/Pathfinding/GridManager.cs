@@ -70,7 +70,19 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < gridSize.y; y++)
             {
                 Vector2Int coordinates = new Vector2Int(x, y);
-                grid.Add(coordinates, new Node(coordinates, true));
+                Vector2Int coords = new Vector2Int(x * 10, y * 10);
+                Ray ray = Camera.main.ScreenPointToRay(GetPositionFromCoordinates(coords));
+                bool walkable = Physics.Raycast(ray, out var hit, 7);
+                if (walkable)
+                {
+                    Debug.Log(hit.transform.name);
+                    grid.Add(coordinates, new Node(coordinates, true));
+                }
+                else
+                {
+                    grid.Add(coordinates, new Node(coordinates, false));
+                }
+                
             }
         }
     }
@@ -83,7 +95,15 @@ public class GridManager : MonoBehaviour
             for (int y = 0; y < gridSize.y; y++)
             {
                 Vector2Int coordinates = new Vector2Int(x, y);
-                emptyGrid.Add(coordinates, new Node(coordinates, true));
+                Vector2Int coords = new Vector2Int(x * 10, y * 10);
+                Ray ray = Camera.main.ScreenPointToRay(GetPositionFromCoordinates(coordinates));
+                bool walkable = Physics.Raycast(ray, out var hit, 7);
+                if (walkable) {
+                    Debug.Log(hit.transform.name);
+                    emptyGrid.Add(coordinates, new Node(coordinates, true));
+                }
+
+                
             }
         }
         return emptyGrid;

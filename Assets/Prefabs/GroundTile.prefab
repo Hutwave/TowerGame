@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8993966094366911350}
   m_Layer: 0
   m_Name: GroundTile
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,15 +45,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 984707646778212447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: hoverColor.b
-      value: 0.8509804
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 984707646778212447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: hoverColor.g
-      value: 0.83137256
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 984707646778212447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: hoverColor.r
-      value: 0.16153437
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4263554401273662441, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: m_RootOrder
@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: (0, 0)
       objectReference: {fileID: 0}
+    - target: {fileID: 4263554401273662447, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3ed7569d3b82b4d9cac4cec0c7f848, type: 2}
     - target: {fileID: 6568374672078260719, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
       propertyPath: m_LocalScale.x
       value: 10
@@ -123,6 +127,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8492854956379913072, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e3ed7569d3b82b4d9cac4cec0c7f848, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5506565185d5e4faabb131b16890f4, type: 3}
 --- !u!4 &7562443634983937974 stripped
