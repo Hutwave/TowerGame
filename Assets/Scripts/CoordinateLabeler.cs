@@ -86,8 +86,8 @@ public class CoordinateLabeler : MonoBehaviour
     {
         try
         {
-            coordinates.x = Mathf.RoundToInt(transform.parent.position.x / 10);
-            coordinates.y = Mathf.RoundToInt(transform.parent.position.z / 10);
+            coordinates.x = Mathf.RoundToInt(transform.parent.position.x);
+            coordinates.y = Mathf.RoundToInt(transform.parent.position.z);
             label.text = $"{coordinates.x},{coordinates.y}";
         }
         catch
